@@ -39,6 +39,12 @@ public class WechatTest {
 
     @Test
     public void opencvLogin() throws Exception {
+        wd.findElement(By.xpath("//android.view.View[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.Button[2]"));
+        TakeScreenshot screenshot = new TakeScreenshot();
+        screenshot.take(wd,"login");
+        Matching matching = new Matching();
+        int location[] = matching.getMatchingLocation("screenshots/login.png","temp/login.png","compare/login.png");
+        wd.tap(1,location[0],location[1], 100);
 
     }
 

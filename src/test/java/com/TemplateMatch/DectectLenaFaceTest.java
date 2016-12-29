@@ -15,7 +15,7 @@ public class DectectLenaFaceTest {
 
     @Test
     public void FindLenaFace() throws Exception {
-        int location[] = matching.getMatchingLocation("screenshots/lena.png", "temp/temp_lena_face.png", "compare/lena_face.png");
+        int location[] = matching.getMatchingLocation("screenshots/lena.png", "temp/temp_lena_face.png", "compare/lena_face_TaiyuTest.png");
         System.out.println("x= "+location[0]+",  y="+location[1]);
         assertNotNull(location);
     }
