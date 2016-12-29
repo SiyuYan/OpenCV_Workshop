@@ -23,9 +23,9 @@ public class Matching {
         // Match Template Function from OpenCV
         int method = Imgproc.TM_SQDIFF_NORMED; // select a matching method
         //*****     matching and get the result matrix     ********
-        Imgproc.matchTemplate(src, tmp, result, method);
+
         //****     get the min and max  values and their locations    *****
-        Core.MinMaxLocResult mmr = Core.minMaxLoc(result);
+        Core.MinMaxLocResult mmr = null;
 
 
 
@@ -44,11 +44,11 @@ public class Matching {
 
         //show what we got
         //***** get the endPoint  *****
-        Point endPoint = new Point(matchLoc.x+tmp.cols(), matchLoc.y+tmp.rows());
+        Point endPoint;
         //***** draw a rectangle from the matchLoc to endPoint;   *****
-        Imgproc.rectangle(src, matchLoc,endPoint, new Scalar(0,0,255));
+
         //write the compare result
-        Imgcodecs.imwrite(args[2], src);
+        Imgcodecs.imwrite("compare/lena_face.png", src);
 
 
 
